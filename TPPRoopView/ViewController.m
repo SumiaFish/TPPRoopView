@@ -26,9 +26,9 @@
     [self.view addSubview:self.roopView];
     
     [self loadData];
-    self.roopView.data = self.data;
-    self.roopView.duration = 2;
     self.roopView.maxRows = 5;
+    self.roopView.duration = 1;
+    self.roopView.data = self.data;
     self.roopView.backgroundColor = UIColor.lightGrayColor;
     [self.roopView play];
 }

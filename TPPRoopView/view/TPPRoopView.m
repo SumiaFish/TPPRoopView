@@ -75,13 +75,19 @@ UICollectionViewDataSource>
         return;
     }
     
+    //
     self.isChanging = YES;
     
     [self.listData removeAllObjects];
     !data ?: [self.listData addObjectsFromArray:data.copy];
+    self.currentData = self.listData.count >= self.maxRows ? [self.listData subarrayWithRange:NSMakeRange(0, self.maxRows)] : self.listData;
     [self.collectionView reloadData];
     
     self.isChanging  = NO;
+}
+
+- (void)setIsChanging:(BOOL)isChanging {
+    _isChanging = isChanging;
 }
 
 - (NSArray<TPPRoopViewModel *> *)data {
@@ -97,7 +103,8 @@ UICollectionViewDataSource>
 }
 
 - (NSRange)range {
-    if (_range.location == NSNotFound) {
+    if (_range.location == NSNotFound ||
+        _range.length == 0) {
         _range = NSMakeRange(0, 2);
     }
     
@@ -224,6 +231,7 @@ UICollectionViewDataSource>
     TPPRoopViewModel *model2 = currentData[currentData.count-2];
     TPPRoopViewEmptyModel *emptyModel = TPPRoopViewEmptyModel.new;
     
+    [self.collectionView reloadData];
     [UIView performWithoutAnimation:^{
         [currentData replaceObjectAtIndex:currentData.count-1 withObject:emptyModel];
         [self.collectionView reloadItemsAtIndexPaths:@[[NSIndexPath indexPathForItem:currentData.count-1 inSection:0]]];
@@ -283,6 +291,7 @@ UICollectionViewDataSource>
         [view registerClass:TPPRoopViewEmptyCell.class forCellWithReuseIdentifier:@"emptyCell"];
         view.backgroundColor = UIColor.clearColor;
         view.clipsToBounds = YES;
+        view.scrollEnabled = NO;
         
         _collectionView = view;
     }
