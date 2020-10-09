@@ -28,6 +28,7 @@
     [self loadData];
     self.roopView.data = self.data;
     self.roopView.duration = 2;
+    self.roopView.maxRows = 5;
     self.roopView.backgroundColor = UIColor.lightGrayColor;
     [self.roopView play];
 }
@@ -35,13 +36,13 @@
 - (void)viewDidLayoutSubviews {
     [super viewDidLayoutSubviews];
     
-    self.roopView.frame = CGRectMake(0, 100, self.view.bounds.size.width, 300);
+    self.roopView.frame = CGRectMake(0, 100, self.view.bounds.size.width, self.roopView.height);
 }
 
 - (void)loadData {
     [self.data removeAllObjects];
     
-    for (NSInteger i = 0; i < 5; i++) {
+    for (NSInteger i = 0; i < 100; i++) {
         TPPRoopViewModel *model = [[TPPRoopViewModel alloc] init];
         model.text = @(i).stringValue;
         [self.data addObject:model];
