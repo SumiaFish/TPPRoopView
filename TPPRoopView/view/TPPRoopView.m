@@ -189,18 +189,21 @@ UICollectionViewDataSource>
     block();
     
     if (currentData.count == 0) {
+        // location 越界
         self.range = NSMakeRange(self.range.location % self.listData.count, self.maxRows);
         block();
     }
     
     if (currentData.count < self.maxRows) {
-        for (NSInteger i = 0; i < self.maxRows - currentData.count; i++) {
+        // currentData未填满时， location越界
+        NSInteger count = self.maxRows - currentData.count;
+        for (NSInteger i = 0; i < count; i++) {
             [currentData addObject:self.listData[i]];
         }
     }
 
-    if (currentData.count < self.maxRows ||
-        self.isChanging) {
+    if (currentData.count < self.maxRows) {
+        // listData.count < self.maxRows
         dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(self.duration * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
             [self render];
         });
