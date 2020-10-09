@@ -28,6 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (assign, nonatomic) CGFloat lineSpace;
 
 - (void)setData:(NSArray<TPPRoopViewModel *> * _Nullable)data;
+- (NSArray<TPPRoopViewModel *> *)data;
 
 - (void)play;
 - (void)pause;

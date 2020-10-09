@@ -84,6 +84,10 @@ UICollectionViewDataSource>
     self.isChanging  = NO;
 }
 
+- (NSArray<TPPRoopViewModel *> *)data {
+    return self.listData;
+}
+
 - (void)setMaxRows:(NSInteger)maxRows {
     self.range = NSMakeRange(0, maxRows < 2 ? 2 : maxRows);
 }
