@@ -16,6 +16,9 @@
 		04490B7C2530063C00384B38 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 04490B7B2530063C00384B38 /* main.m */; };
 		04490B862530063C00384B38 /* TPPRoopViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 04490B852530063C00384B38 /* TPPRoopViewTests.m */; };
 		04490B912530063C00384B38 /* TPPRoopViewUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 04490B902530063C00384B38 /* TPPRoopViewUITests.m */; };
+		04490BA22530065800384B38 /* TPPRoopView.m in Sources */ = {isa = PBXBuildFile; fileRef = 04490BA12530065800384B38 /* TPPRoopView.m */; };
+		04490BA5253006C900384B38 /* TPPRoopViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 04490BA4253006C900384B38 /* TPPRoopViewModel.m */; };
+		04490BA82530074000384B38 /* TPPRoopViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 04490BA72530074000384B38 /* TPPRoopViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +57,12 @@
 		04490B8C2530063C00384B38 /* TPPRoopViewUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TPPRoopViewUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		04490B902530063C00384B38 /* TPPRoopViewUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TPPRoopViewUITests.m; sourceTree = "<group>"; };
 		04490B922530063C00384B38 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		04490BA02530065800384B38 /* TPPRoopView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TPPRoopView.h; sourceTree = "<group>"; };
+		04490BA12530065800384B38 /* TPPRoopView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TPPRoopView.m; sourceTree = "<group>"; };
+		04490BA3253006C900384B38 /* TPPRoopViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TPPRoopViewModel.h; sourceTree = "<group>"; };
+		04490BA4253006C900384B38 /* TPPRoopViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TPPRoopViewModel.m; sourceTree = "<group>"; };
+		04490BA62530074000384B38 /* TPPRoopViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TPPRoopViewCell.h; sourceTree = "<group>"; };
+		04490BA72530074000384B38 /* TPPRoopViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TPPRoopViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +113,8 @@
 		04490B682530063900384B38 /* TPPRoopView */ = {
 			isa = PBXGroup;
 			children = (
+				04490B9F2530064600384B38 /* model */,
+				04490B9E2530064100384B38 /* view */,
 				04490B692530063900384B38 /* AppDelegate.h */,
 				04490B6A2530063900384B38 /* AppDelegate.m */,
 				04490B6C2530063900384B38 /* SceneDelegate.h */,
@@ -135,6 +146,26 @@
 				04490B922530063C00384B38 /* Info.plist */,
 			);
 			path = TPPRoopViewUITests;
+			sourceTree = "<group>";
+		};
+		04490B9E2530064100384B38 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				04490BA02530065800384B38 /* TPPRoopView.h */,
+				04490BA12530065800384B38 /* TPPRoopView.m */,
+				04490BA62530074000384B38 /* TPPRoopViewCell.h */,
+				04490BA72530074000384B38 /* TPPRoopViewCell.m */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		04490B9F2530064600384B38 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				04490BA3253006C900384B38 /* TPPRoopViewModel.h */,
+				04490BA4253006C900384B38 /* TPPRoopViewModel.m */,
+			);
+			path = model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -269,7 +300,10 @@
 			files = (
 				04490B712530063900384B38 /* ViewController.m in Sources */,
 				04490B6B2530063900384B38 /* AppDelegate.m in Sources */,
+				04490BA22530065800384B38 /* TPPRoopView.m in Sources */,
+				04490BA5253006C900384B38 /* TPPRoopViewModel.m in Sources */,
 				04490B7C2530063C00384B38 /* main.m in Sources */,
+				04490BA82530074000384B38 /* TPPRoopViewCell.m in Sources */,
 				04490B6E2530063900384B38 /* SceneDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
